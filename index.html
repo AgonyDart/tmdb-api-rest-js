@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="English">
+    <meta name="author" content="Angel Duarte">
+    <meta name="title" content="Films D'arte">
+    <meta name="description" content="Website focused on show trailers and information about films and series through the API of TMDB">
+    <meta name="keywords" content="angelostd, films, movies, api, series, tvshows, javascript, ">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <title>Films D'arte</title>
+</head>
+
+<body>
+    <script>
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            alert("You are not on a mobile device. This website is optimized for mobile devices. Please, use a mobile device to see the best experience.");
+        }
+    </script>
+    <header id="header-section" class="header hero">
+        <div id="header-arrow" class="hero-details__back">
+            <i id="return-home" class="fas fa-5x fa-chevron-left"></i>
+        </div>
+        <div id="header-navbar" class="nav-bar">
+            <i id="search-home-btn" class="fas fa-3x fa-search nav-bar__search-icon"></i>
+            <a class="nav-bar__redirect nav-bar__redirect--series" href="#series">Series</a>
+            <a class="nav-bar__redirect nav-bar__redirect--movies" href="#movies">Movies</a>
+            <a class="nav-bar__redirect nav-bar__redirect--categories" href="#main-categories-title">Categories</a>
+        </div>
+        <div id="trailer-container"></div>
+        <div id="header-info" class="hero-info">
+            <h1 id="header-info__title" class="hero-info__title">Better Call Saul</h1>
+            <div id="interaction-menu" class="interaction-menu">
+                <!-- <i class="far fa-3x fa-bookmark interaction-menu__bookmark"></i>
+                <button type="button" class="interaction-menu__trailer-btn trailer-btn">Play Trailer</button>
+                <span id="header-more-info" class="icon-container"><i
+                        class="fas fa-1x fa-info interaction-menu__more-info"></i></span> -->
+            </div>
+            <div id="header-info__labels" class="hero-labels-section">
+                <!-- <a href="#"><span class="category-label hero-labels-section__category">Drama</span></a>
+                <a href="#"><span class="category-label hero-labels-section__category">Crime</span></a> -->
+            </div>
+        </div>
+    </header>
+    <main id="main-section" class="main">
+        <article id="main-search" class="main-search">
+            <div class="main-search-header">
+                <!-- <i id="return-home" class="fas fa-5x fa-chevron-left"></i> -->
+                <div class="main-search__input">
+                    <input id="search-input" autocomplete="off" class="main-search__bar" type="search"
+                        placeholder="Search movies, tv shows, ...">
+                    <i id="to-search-btn" class="fas fa-4x fa-search nav-bar__search-icon"></i>
+                </div>
+            </div>
+            <div id="vertical-movie-wrapper-search" class="main-search--movies-wrapper movies-wrapper">
+                <!-- <img class="poster-wrapper__img"
+                    src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                    alt="poster of a movie"> -->
+            </div>
+        </article>
+        <article id="main-category" class="main-category">
+            <div class="main-category-header">
+                <div id="back-arrow">
+                    <i id="return-home" class="fas fa-5x fa-chevron-left"></i>
+                </div>
+                <h2 id="main-category-title" class="main-category__title">Category</h2>
+            </div>
+            <div id="vertical-movie-wrapper-category" class="main-category--movies-wrapper movies-wrapper">
+                <!-- <img class="poster-wrapper__img"
+                    src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                    alt="poster of a movie"> -->
+            </div>
+        </article>
+        <article id="main-details" class="main-details">
+            <section class="main-details-more-info">
+                <div class="more-info-header">
+                    <!-- <i class="far fa-3x fa-bookmark interaction-menu__bookmark"></i> -->
+                    <h1 id="details-section-title" class="more-info-header__title"></h1>
+                    <div class="more-details__liked-section">
+                        <p id="details-section-vote"></p>
+                        <i class="fas fa-2x fa-thumbs-up"></i>
+                    </div>
+                </div>
+                <div id="details-section-categories" class="more-info-categories">
+                </div>
+                <div id="overview-details" class="more-info-readable">
+                </div>
+            </section>
+            <section class="main-section main-section--related">
+                <h2 class="main-section__title main-section__title--top-related">Related</h2>
+                <div id="details-related-content" class="main-section__poster-container poster-container">
+                    <!-- <img class="poster-container__img"
+                        src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                        alt="poster of a movie"> -->
+                </div>
+            </section>
+        </article>
+        <!-- <section id="my-list-preview-section" class="main-section main-section--myList">
+            <h2 class="main-section__title main-section__title--myList">My List</h2>
+            <div class="main-section__poster-container poster-container">
+                <img class="poster-container__img"
+                    src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                    alt="poster of a movie">
+                <img class="poster-container__img not-loaded" src="#" alt="broken">
+            </div>
+        </section> -->
+        <section id="trending-preview-section" class="main-section main-section--trending">
+            <h2 class="main-section__title main-section__title--trending">Trending</h2>
+            <div id="trending-wrapper-preview" class="main-section__trending">
+                <h3 id="trending-title__movies" class="trending-type-title">Movies</h3>
+                <div id="trending-wrapper-movies" class="main-section__trending--movies poster-container"></div>
+                <h3 id="trending-title__series" class="trending-type-title">Series</h3>
+                <div id="trending-wrapper-series" class="main-section__trending--series poster-container"></div>
+            </div>
+        </section>
+        <section id="categories-preview-section" class="main-section main-section--categories">
+            <h2 id="main-categories-title" class="main-section__title main-section__title--categories">Categories</h2>
+            <div id="categories-wrapper-preview" class="categories-groups categories-container">
+                <!-- <div class="category">
+                    <p>Category 1</p>
+                </div> -->
+            </div>
+        </section>
+        <section id="random-preview-section" class="main-section main-section--random">
+            <h2 id="main-random-title" class="main-section__title main-section__title--random">Random</h2>
+            <div id="random-wrapper-preview" class="main-section__poster-container poster-container">
+                <!-- <img class="poster-container__img"
+                    src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                    alt="poster of a movie"> -->
+            </div>
+        </section>
+        <section id="top-rated-preview-section" class="main-section main-section--top-rated">
+            <h2 class="main-section__title main-section__title--top-rated">Top Rated Movies</h2>
+            <div id="top-rated-wrapper-preview" class="main-section__poster-container poster-container">
+                <!-- <img class="poster-container__img"
+                    src="https://www.quepeliculaver.com/uploads/2021/12/7YncShtIGNJP5euTPSZGxGsImaN.jpg"
+                    alt="poster of a movie"> -->
+            </div>
+        </section>
+    </main>
+    <footer id="footer-section" class="footer">
+        <div class="footer__tmdb-logo">
+            <a target="_blank" href="https://www.themoviedb.org/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tmdb.new.logo.svg/2560px-Tmdb.new.logo.svg.png"
+                    alt="the movies database logo">
+            </a>
+        </div>
+        <div class="footer-disclaimer">
+            <p>Made by @angelostd</p>
+            <p>Copyright Ⓒ 2022</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-links__social-icons">
+                <!-- <a target="_blank" href="https://platzi.com/p/angelduarte/"><i class="fab fa-platzi"></i></a> -->
+                <a target="_blank" href="https://www.linkedin.com/in/angelostd/"><i
+                        class="fab fa-2x fa-linkedin"></a></i>
+                <a target="_blank" href="https://github.com/AgonyDart/tmdb-api-rest-js"><i class="fab fa-2x fa-github"></a></i>
+                <!-- <a target="_blank" href="https://twitter.com/AgonyDart"><i class="fab fa-2x fa-twitter"></a></i> -->
+            </div>
+            <!-- <a target="_blank" href="https://github.com/angelostd/tmdb-api-rest-js">Documentation</a> -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/8aeb1532d4.js" crossorigin="anonymous"></script>
+    <script src="./assets/nodes.js"></script>
+    <script type="module" src="./assets/navigation.js"></script>
+    <script type="module" src="./assets/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+:root {
+    --bold: 700;
+    --semi-bold: 600;
+    --medium: 500;
+    --regular: 400;
+
+    --pink-red: #e50914;
+    --white-smoke: #f2f2f2;
+    --dark-russ: #101011;
+    --main-black: #030303;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+    color: var(--white-smoke);
+}
+
+body {
+    background-color: var(--main-black);
+}
+
+/* header */
+
+.hero {
+    min-width: 320px;
+    width: 100%;
+    height: 408px;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(92, 92, 92, 0.303) 33%,
+            rgba(92, 92, 92, 0.303) 66%,
+            rgba(0, 0, 0, 0.75) 100%),
+        url(https://m.media-amazon.com/images/I/91NSSRd5-dL._SL1500_.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar {
+    width: 100%;
+    margin: 12px 0;
+    padding-left: 16px;
+    padding-right: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar a,
+.nav-bar a:visited {
+    text-decoration: none;
+    color: var(--white-smoke);
+    font-weight: var(--semi-bold);
+    font-size: 1.3rem;
+}
+
+.hero-info {
+    width: 100%;
+    height: 140px;
+    padding: 0 16px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-info__title,
+.more-info-header__title {
+    font-size: 2.4rem;
+    font-weight: var(--bold);
+}
+
+.interaction-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--white-smoke);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+.hero-labels-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hero-labels-section a,
+.hero-labels-section a:visited {
+    text-decoration: none;
+    color: var(--white-smoke);
+}
+
+/* more details header */
+
+.hero-details {
+    height: 560px;
+    background-image: url(https://m.media-amazon.com/images/I/91NSSRd5-dL._SL1500_.jpg);
+    display: block;
+}
+
+.fa-chevron-left {
+    position: relative;
+    margin: 16px;
+}
+
+/* main */
+
+.main {
+    background-color: var(--main-black);
+}
+
+.main-section {
+    padding: 32px 0px 0px 28px;
+}
+
+.main-section__title {
+    font-size: 1.3rem;
+    font-weight: var(--regular);
+    margin-bottom: 20px;
+}
+
+.trending-type-title {
+    font-size: 1rem;
+    font-weight: var(--regular);
+    margin: 12px 32px;
+}
+
+.poster-container,
+.categories-container {
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.poster-container::-webkit-scrollbar,
+.categories-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.poster-container,
+.categories-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.poster-container__img {
+    height: 152px;
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.main-section--top-rated {
+    padding-bottom: 28px;
+}
+
+/* more details main */
+
+.main--details {
+    position: relative;
+    top: -20px;
+    height: 496px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.main-details--trailer {
+    top: 0;
+}
+
+.main-details-more-info {
+    padding: 0px 24px;
+    height: 232px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.more-info-header {
+    /* padding-top: 24px;- */
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.more-info-header__title {
+    padding-left: 20px;
+    text-align: center;
+}
+
+.more-details__liked-section {
+    height: 100%;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more-details__liked-section p {
+    font-weight: var(--bold);
+}
+
+.more-info-categories {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.more-info-categories a {
+    text-decoration: none;
+    color: var(--white-smoke);
+}
+
+.more-info-readable {
+    width: 100%;
+    height: 124px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more-info-readable p {
+    font-weight: var(--medium);
+    font-size: 1.2rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* main category */
+.poster-wrapper__img {
+    width: 150px;
+    height: 224px;
+    border-radius: 8px;
+}
+
+.main-category-header,
+.main-search-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+.main-category__title {
+    font-weight: var(--semi-bold);
+    font-size: 2.5rem;
+    padding: 40px 0px 32px 36px;
+}
+
+.movies-wrapper {
+    height: auto;
+    width: 324px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding-bottom: 100px;
+}
+
+/* main search */
+
+.main-search__input {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px auto;
+}
+
+.main-search__bar {
+    width: 288px;
+    height: 44px;
+    border-radius: 12px;
+    margin-right: 12px;
+    background-color: var(--main-black);
+    border: 2px solid var(--white-smoke);
+}
+
+.main-search__bar::placeholder,
+.main-search__bar:focus,
+.main-search__bar:-internal-autofill-selected {
+    color: var(--white-smoke);
+    padding-left: 16px;
+}
+
+/* footer */
+
+.footer {
+    background-color: var(--dark-russ);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer--trailer {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer__tmdb-logo img {
+    margin-left: 16px;
+    height: 64px;
+    width: 64px;
+}
+
+.footer-links {
+    height: 100%;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-disclaimer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: var(--regular);
+}
+
+.footer-links__social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 16px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--white-smoke);
+    font-weight: var(--regular);
+}
+
+.fa-platzi {
+    width: 20px;
+    height: 20px;
+    background-image: url("https://icons-for-free.com/iconfiles/png/512/platzi-1324440213777394405.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: invert(87%) sepia(82%) saturate(520%) hue-rotate(22deg) brightness(88%) contrast(76%);
+}
+
+.fa-linkedin {
+    color: #0072b1;
+}
+
+.fa-twitter {
+    color: #00acee;
+}
+
+/* Assets */
+
+.hidden {
+    display: none;
+}
+
+.border {
+    border: 1px solid red;
+}
+
+.fa-thumbs-up {
+    color: var(--white-smoke);
+}
+
+.trailer-btn {
+    min-height: 28px;
+    width: 120px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--pink-red);
+    color: var(--white-smoke);
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: var(--regular);
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 152px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 16px;
+    background-image: linear-gradient(to bottom, #626262, #959595, #c7c7c7);
+}
+
+.category>p {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.8rem;
+}
+
+.category-label {
+    width: fit-content;
+    border: 2px solid var(--white-smoke);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-weight: var(--bold);
+}
+
+.arrow-trailer {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    z-index: 1;
+}
+/* categories gradient */
+
+#id28 {
+    /* action */
+    background-image: linear-gradient(to bottom, #4c1a1a, #842e2e, #bd4141);
+}
+
+#id12 {
+    /* adventure */
+    background-image: linear-gradient(to bottom, #153038, #245462, #34788c);
+}
+
+#id16 {
+    /* animation */
+    background-image: linear-gradient(to bottom, #642d2a, #ae4e49, #f97068);
+}
+
+#id35 {
+    /* comedy */
+    background-image: linear-gradient(to bottom, #665b36, #b3a05f, #ffe488);
+}
+
+#id80 {
+    /* crime */
+    background-image: linear-gradient(to bottom, #1b0722, #2f0d3b, #431254);
+}
+
+#id99 {
+    /* documentary */
+    background-image: linear-gradient(to bottom, #38563a, #629765, #8cd790);
+}
+
+#id18 {
+    /* drama */
+    background-image: linear-gradient(to bottom, #101826, #1d2a43, #293c60);
+}
+
+#id10751 {
+    /* family */
+    background-image: linear-gradient(to bottom, #534d50, #91878c, #cfc1c8);
+}
+
+#id14 {
+    /* fantasy */
+    background-image: linear-gradient(to bottom, #4c3866, #8562b3, #be8cff);
+}
+
+#id36 {
+    /* history */
+    background-image: linear-gradient(to bottom, #51401e, #8e7035, #cba04b);
+}
+
+#id27 {
+    /* horror */
+    background-image: linear-gradient(to bottom, #110100, #1a0200, #270100);
+}
+
+#id10402 {
+    /* music */
+    background-image: linear-gradient(to bottom, #283f4e, #476f89, #659ec4);
+}
+
+#id9648 {
+    /* mistery */
+    background-image: linear-gradient(to bottom, #120f24, #1f1a3e, #2c2559);
+}
+
+#id10749 {
+    /* romance */
+    background-image: linear-gradient(to bottom, #420e1d, #741933, #a62349);
+}
+
+#id878 {
+    /* sci fi */
+    background-image: linear-gradient(to bottom, #002029, #003847, #005066);
+}
+
+#id10770 {
+    /* tv */
+    background-image: linear-gradient(to bottom, #004127, #007144, #00a261);
+}
+
+#id53 {
+    /* thriller */
+    background-image: linear-gradient(to bottom, #131313, #292929, #3f3f3f);
+}
+
+#id10752 {
+    /* war */
+    background-image: linear-gradient(to bottom, #280000, #470000, #650000);
+}
+
+#id37 {
+    /* western */
+    background-image: linear-gradient(to bottom, #643d17, #ae6b29, #f9993a);
+}
+
+/* I'm uncomfortable using the '!important' but I didn't find another solution :/  */
+
+p[id^="id"].category-label {
+    background-image: none !important;
+}
+
+iframe {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+img[alt^="broken"] {
+    display: none;
+}
