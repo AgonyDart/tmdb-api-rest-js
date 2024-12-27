@@ -350,7 +350,7 @@ body {
 .footer-links__social-icons {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-right: 16px;
 }
 
@@ -392,12 +392,14 @@ body {
 }
 
 .trailer-btn {
-    height: 28px;
-    width: 80px;
+    min-height: 28px;
+    width: 120px;
+    margin-bottom: 8px;
     border: none;
     border-radius: 8px;
     background-color: var(--pink-red);
     color: var(--white-smoke);
+    text-align: center;
     font-size: 1.3rem;
     font-weight: var(--regular);
 }

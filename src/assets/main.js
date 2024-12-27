@@ -197,7 +197,7 @@ export async function getRandomHeader() {
     headerRandomMenu.innerHTML = " ";
     headerRandomLabels.innerHTML = " ";
     headerRandomLabels.append(...categoriesList);
-    headerRandomMenu.append(bookmark, btn, moreInfo);
+    headerRandomMenu.append(btn);
 }
 
 export async function getTopRatedMoviesPreview() {
@@ -208,8 +208,7 @@ export async function getTopRatedMoviesPreview() {
 }
 
 export async function getMoviesByCategory(id) {
-    const data = requestMoviesByCategoryId(id);
-
+    const data = await requestMoviesByCategoryId(id);
     verticalMovieWrapperCategory.innerHTML = " ";
     verticalMovieWrapperCategory.append(...makeMixedContainerY(data))
 }

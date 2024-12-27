@@ -20,9 +20,14 @@
 </head>
 
 <body>
+    <script>
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            alert("You are not on a mobile device. This website is optimized for mobile devices. Please, use a mobile device to see the best experience.");
+        }
+    </script>
     <header id="header-section" class="header hero">
         <div id="header-arrow" class="hero-details__back">
-            <i class="fas fa-5x fa-chevron-left"></i>
+            <i id="return-home" class="fas fa-5x fa-chevron-left"></i>
         </div>
         <div id="header-navbar" class="nav-bar">
             <i id="search-home-btn" class="fas fa-3x fa-search nav-bar__search-icon"></i>
@@ -48,7 +53,7 @@
     <main id="main-section" class="main">
         <article id="main-search" class="main-search">
             <div class="main-search-header">
-                <i id="return-home" class="fas fa-5x fa-chevron-left"></i>
+                <!-- <i id="return-home" class="fas fa-5x fa-chevron-left"></i> -->
                 <div class="main-search__input">
                     <input id="search-input" autocomplete="off" class="main-search__bar" type="search"
                         placeholder="Search movies, tv shows, ...">
@@ -64,7 +69,7 @@
         <article id="main-category" class="main-category">
             <div class="main-category-header">
                 <div id="back-arrow">
-                    <i class="fas fa-5x fa-chevron-left"></i>
+                    <i id="return-home" class="fas fa-5x fa-chevron-left"></i>
                 </div>
                 <h2 id="main-category-title" class="main-category__title">Category</h2>
             </div>
@@ -77,7 +82,7 @@
         <article id="main-details" class="main-details">
             <section class="main-details-more-info">
                 <div class="more-info-header">
-                    <i class="far fa-3x fa-bookmark interaction-menu__bookmark"></i>
+                    <!-- <i class="far fa-3x fa-bookmark interaction-menu__bookmark"></i> -->
                     <h1 id="details-section-title" class="more-info-header__title"></h1>
                     <div class="more-details__liked-section">
                         <p id="details-section-vote"></p>
@@ -144,7 +149,7 @@
     <footer id="footer-section" class="footer">
         <div class="footer__tmdb-logo">
             <a target="_blank" href="https://www.themoviedb.org/">
-                <img src="https://camo.githubusercontent.com/2f85352fdfabf42a2f778901b0ae1b069e94932969b0983f18fdd44db4c9696d/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313230302f312a76495237694f2d31476e59327859784c364e69596b772e706e67"
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tmdb.new.logo.svg/2560px-Tmdb.new.logo.svg.png"
                     alt="the movies database logo">
             </a>
         </div>
@@ -154,13 +159,13 @@
         </div>
         <div class="footer-links">
             <div class="footer-links__social-icons">
-                <a target="_blank" href="https://platzi.com/p/angelduarte/"><i class="fab fa-platzi"></i></a>
+                <!-- <a target="_blank" href="https://platzi.com/p/angelduarte/"><i class="fab fa-platzi"></i></a> -->
                 <a target="_blank" href="https://www.linkedin.com/in/angelostd/"><i
                         class="fab fa-2x fa-linkedin"></a></i>
-                <a target="_blank" href="https://github.com/AgonyDart"><i class="fab fa-2x fa-github"></a></i>
-                <a target="_blank" href="https://twitter.com/AgonyDart"><i class="fab fa-2x fa-twitter"></a></i>
+                <a target="_blank" href="https://github.com/AgonyDart/tmdb-api-rest-js"><i class="fab fa-2x fa-github"></a></i>
+                <!-- <a target="_blank" href="https://twitter.com/AgonyDart"><i class="fab fa-2x fa-twitter"></a></i> -->
             </div>
-            <a target="_blank" href="https://github.com/angelostd/tmdb-api-rest-js">Documentation</a>
+            <!-- <a target="_blank" href="https://github.com/angelostd/tmdb-api-rest-js">Documentation</a> -->
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
